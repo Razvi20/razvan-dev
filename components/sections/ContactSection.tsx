@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Send, Globe, Bot, CheckCircle2, LucideIcon } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Container } from "@/components/atoms";
-import { SectionHeader } from "@/components/molecules";
-import { AnimatedSection } from "@/components/templates";
+import { useState } from 'react';
+import { Send, Globe, Bot, CheckCircle2, LucideIcon } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
+import { Container } from '@/components/atoms';
+import { SectionHeader } from '@/components/molecules';
+import { AnimatedSection } from '@/components/templates';
 
 interface ServiceOption {
   id: string;
@@ -19,16 +19,16 @@ interface ServiceOption {
 
 const serviceOptions: ServiceOption[] = [
   {
-    id: "website",
+    id: 'website',
     icon: Globe,
-    label: "I need a website",
-    description: "Full-stack web application development",
+    label: 'I need a website',
+    description: 'Full-stack web application development',
   },
   {
-    id: "ai",
+    id: 'ai',
     icon: Bot,
-    label: "I want to automate with AI",
-    description: "AI agents, chatbots, and automation",
+    label: 'I want to automate with AI',
+    description: 'AI agents, chatbots, and automation',
   },
 ];
 
@@ -47,26 +47,26 @@ function ServiceOptionCard({
       onClick={onSelect}
       className={`p-4 rounded-xl border text-left transition-all ${
         isSelected
-          ? "border-primary bg-primary/5"
-          : "border-border bg-secondary/30 hover:border-primary/50"
+          ? 'border-primary bg-primary/5'
+          : 'border-border bg-secondary/30 hover:border-primary/50'
       }`}
     >
       <div className="flex items-start gap-3">
         <div
           className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 ${
-            isSelected ? "bg-primary/20" : "bg-secondary"
+            isSelected ? 'bg-primary/20' : 'bg-secondary'
           }`}
         >
           <option.icon
             className={`w-5 h-5 ${
-              isSelected ? "text-primary" : "text-muted-foreground"
+              isSelected ? 'text-primary' : 'text-muted-foreground'
             }`}
           />
         </div>
         <div>
           <div
             className={`font-medium ${
-              isSelected ? "text-foreground" : "text-muted-foreground"
+              isSelected ? 'text-foreground' : 'text-muted-foreground'
             }`}
           >
             {option.label}
@@ -176,7 +176,7 @@ function ContactForm() {
 
 export function ContactSection() {
   return (
-    <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
       <Container size="narrow">
         <AnimatedSection>
           <SectionHeader

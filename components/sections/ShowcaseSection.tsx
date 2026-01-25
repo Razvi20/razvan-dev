@@ -1,27 +1,27 @@
-"use client";
+'use client';
 
-import { ExternalLink, TrendingUp, Clock, Zap, MapPin } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { Container } from "@/components/atoms";
-import { SectionHeader, MetricCard, IconBox } from "@/components/molecules";
-import { BrowserFrame } from "@/components/organisms";
-import { AnimatedSection } from "@/components/templates";
+import { ExternalLink, TrendingUp, Clock, Zap, MapPin } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import { Container } from '@/components/atoms';
+import { SectionHeader, MetricCard, IconBox } from '@/components/molecules';
+import { BrowserFrame } from '@/components/organisms';
+import { AnimatedSection } from '@/components/templates';
 
-const PROJECT_URL = "https://viennamdvtransfer.com";
+const PROJECT_URL = 'https://viennamdvtransfer.com';
 
-const techStack = ["Next.js", "NestJS", "PostgreSQL", "TypeScript", "Tailwind"];
+const techStack = ['Next.js', 'NestJS', 'PostgreSQL', 'TypeScript', 'Tailwind'];
 
 const metrics = [
-  { icon: TrendingUp, label: "Revenue Increase", value: "340%" },
-  { icon: Clock, label: "Time Saved Weekly", value: "40hrs" },
-  { icon: Zap, label: "Automation Rate", value: "95%" },
+  { icon: TrendingUp, label: 'Revenue Increase', value: '340%' },
+  { icon: Clock, label: 'Time Saved Weekly', value: '40hrs' },
+  { icon: Zap, label: 'Automation Rate', value: '95%' },
 ];
 
 export function ShowcaseSection() {
   return (
-    <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
+    <section id="showcase" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
       <Container>
         <AnimatedSection>
           <SectionHeader

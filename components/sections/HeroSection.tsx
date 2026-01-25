@@ -50,16 +50,19 @@ export function HeroSection() {
           delay={0.3}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <Button size="lg" className="gap-2 px-8 w-full sm:w-auto">
-            Automate My Business
-            <ArrowRight className="w-4 h-4" />
+          <Button size="lg" className="gap-2 px-8 w-full sm:w-auto" asChild>
+            <a href="#contact">
+              Automate My Business
+              <ArrowRight className="w-4 h-4" />
+            </a>
           </Button>
           <Button
             size="lg"
             variant="outline"
             className="gap-2 px-8 bg-transparent w-full sm:w-auto"
+            asChild
           >
-            View Full-Stack Work
+            <a href="#showcase">View Full-Stack Work</a>
           </Button>
         </AnimatedHero>
       </div>
