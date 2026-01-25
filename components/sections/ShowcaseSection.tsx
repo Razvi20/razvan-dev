@@ -32,11 +32,12 @@ export function ShowcaseSection() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.1} className="space-y-8">
-          {/* Browser Frame with Screenshot Placeholder */}
+          {/* Browser Frame with Screenshot */}
           <BrowserFrame
             url={PROJECT_URL}
             title="Vienna MDV Transfer Preview"
-            // Add screenshotSrc="/screenshots/vienna-mdv-preview.png" when available
+            screenshotSrc="/screenshots/mdv-website.png"
+            screenshotSrcLight="/screenshots/mdv-website-light.png"
           />
 
           {/* Project Info Card */}

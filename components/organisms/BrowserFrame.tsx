@@ -1,22 +1,32 @@
-"use client";
+'use client';
 
-import { ExternalLink, ImageIcon } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import Image from "next/image";
+import { ExternalLink, ImageIcon } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import Image from 'next/image';
+import { useTheme } from 'next-themes';
 
 interface BrowserFrameProps {
   url: string;
   title: string;
   screenshotSrc?: string;
+  screenshotSrcLight?: string;
 }
 
 export function BrowserFrame({
   url,
   title,
   screenshotSrc,
+  screenshotSrcLight,
 }: BrowserFrameProps) {
   const domain = new URL(url).hostname;
+  const { theme, resolvedTheme } = useTheme();
+
+  const currentTheme = resolvedTheme || theme || 'dark';
+  const imageToDisplay =
+    currentTheme === 'light' && screenshotSrcLight
+      ? screenshotSrcLight
+      : screenshotSrc;
 
   return (
     <div className="relative group">
@@ -58,18 +68,19 @@ export function BrowserFrame({
         </div>
 
         {/* Screenshot or Placeholder */}
-        <div className="relative aspect-[16/9] bg-background overflow-hidden">
-          {screenshotSrc ? (
+        <div className="relative w-full bg-background overflow-hidden">
+          {imageToDisplay ? (
             <Image
-              src={screenshotSrc}
+              src={imageToDisplay}
               alt={title}
-              fill
-              className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+              width={1920}
+              height={852}
+              className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
               priority
             />
           ) : (
             // Placeholder when no screenshot provided
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-primary/10 flex flex-col items-center justify-center gap-4">
+            <div className="aspect-video bg-linear-to-br from-primary/5 via-background to-primary/10 flex flex-col items-center justify-center gap-4">
               <div className="w-20 h-20 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center">
                 <ImageIcon className="w-10 h-10 text-primary/50" />
               </div>
@@ -83,7 +94,7 @@ export function BrowserFrame({
               </div>
             </div>
           )}
-          
+
           {/* Hover overlay with CTA */}
           <Link
             href={url}

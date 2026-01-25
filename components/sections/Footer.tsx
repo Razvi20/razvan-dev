@@ -1,10 +1,18 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
-import { Container } from "@/components/atoms";
+import { Github, Linkedin, Instagram } from 'lucide-react';
+import { Container } from '@/components/atoms';
 
 const socialLinks = [
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
+  { icon: Github, href: 'https://github.com/Razvi20', label: 'GitHub' },
+  {
+    icon: Linkedin,
+    href: 'https://www.linkedin.com/in/razvan-opris-61a642223',
+    label: 'LinkedIn',
+  },
+  {
+    icon: Instagram,
+    href: 'https://www.instagram.com/razvan_opris/',
+    label: 'Instagram',
+  },
 ];
 
 // Server Component - no client-side JS needed

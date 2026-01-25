@@ -7,7 +7,7 @@ import { ThemeToggle } from '@/components/organisms';
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-24 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 overflow-hidden">
       {/* Theme Toggle - fixed position */}
       <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20">
         <ThemeToggle />
