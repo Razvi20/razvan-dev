@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
   display: 'swap',
 });
 
-const siteUrl = 'https://yoursite.com'; // TODO: Replace with actual domain
+const siteUrl = 'https://razvan.dev';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -34,6 +34,8 @@ export const metadata: Metadata = {
     'AI Automation',
     'Next.js',
     'React',
+    'Spring Boot',
+    'Angular',
     'TypeScript',
     'AI Agents',
     'Business Automation',
@@ -85,10 +87,11 @@ export const metadata: Metadata = {
       'Full-Stack Developer & NVIDIA-Certified AI Associate specializing in automated web apps and business-scale AI agents.',
     images: [
       {
-        url: '/og-image.png',
+        url: `${siteUrl}/og-image.png`,
         width: 1200,
         height: 630,
         alt: 'AI Solutions Architect Portfolio',
+        type: 'image/png',
       },
     ],
   },
@@ -97,8 +100,8 @@ export const metadata: Metadata = {
     title: 'Full-Stack AI Solutions Architect | Portfolio',
     description:
       'Full-Stack Developer & NVIDIA-Certified AI Associate specializing in automated web apps and business-scale AI agents.',
-    images: ['/og-image.png'],
-    creator: '@yourtwitterhandle', // TODO: Replace with actual handle
+    images: [`${siteUrl}/og-image.png`],
+    creator: '@razvan_opris',
   },
 };
 
@@ -106,15 +109,15 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  name: 'AI Solutions Architect',
+  name: 'Razvan Opris',
   jobTitle: 'Full-Stack AI Solutions Architect',
   description:
     'Full-Stack Developer & NVIDIA-Certified AI Associate specializing in automated web apps and business-scale AI agents.',
   url: siteUrl,
   sameAs: [
-    'https://github.com/yourgithub', // TODO: Replace
-    'https://linkedin.com/in/yourlinkedin', // TODO: Replace
-    'https://twitter.com/yourtwitter', // TODO: Replace
+    'https://github.com/Razvi20',
+    'https://linkedin.com/in/razvan-opris-61a642223',
+    'https://instagram.com/razvan_opris',
   ],
   knowsAbout: [
     'Web Development',
