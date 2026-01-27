@@ -80,27 +80,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: siteUrl,
     siteName: 'AI Solutions Architect Portfolio',
     title: 'Full-Stack AI Solutions Architect | Portfolio',
     description:
       'Full-Stack Developer & NVIDIA-Certified AI Associate specializing in automated web apps and business-scale AI agents.',
-    images: [
-      {
-        url: `${siteUrl}/og-image.png`,
-        width: 1200,
-        height: 630,
-        alt: 'AI Solutions Architect Portfolio',
-        type: 'image/png',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Full-Stack AI Solutions Architect | Portfolio',
     description:
       'Full-Stack Developer & NVIDIA-Certified AI Associate specializing in automated web apps and business-scale AI agents.',
-    images: [`${siteUrl}/og-image.png`],
     creator: '@razvan_opris',
   },
 };
@@ -113,7 +102,6 @@ const jsonLd = {
   jobTitle: 'Full-Stack AI Solutions Architect',
   description:
     'Full-Stack Developer & NVIDIA-Certified AI Associate specializing in automated web apps and business-scale AI agents.',
-  url: siteUrl,
   sameAs: [
     'https://github.com/Razvi20',
     'https://linkedin.com/in/razvan-opris-61a642223',
