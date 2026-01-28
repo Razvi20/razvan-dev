@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
   display: 'swap',
 });
 
-const siteUrl = 'https://razvan.dev';
+const siteUrl = 'https://razvanopris.dev';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

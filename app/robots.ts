@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://razvan.dev/sitemap.xml',
+    sitemap: 'https://razvanopris.dev/sitemap.xml',
   };
 }
