@@ -7,7 +7,10 @@ export interface ChatResponse {
 }
 
 const CHAT_API_URL =
-  process.env.NEXT_PUBLIC_CHAT_API_URL || 'http://127.0.0.1:8000';
+  process.env.NEXT_PUBLIC_CHAT_API_URL ||
+  (process.env.NODE_ENV === 'production'
+    ? 'https://viennamdvtransfer.com/chat-api'
+    : 'http://localhost:8000');
 
 export async function sendChatMessage(message: string): Promise<string> {
   try {
