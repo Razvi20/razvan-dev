@@ -7,6 +7,7 @@ import { ChatMessage, ChatMessageProps, ChatSender } from './ChatMessage';
 import { cn } from '@/lib/utils';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
+import { sendChatMessage } from '@/lib/chat-service';
 
 export interface ChatPanelMessage extends ChatMessageProps {
   id: string;
@@ -28,6 +29,7 @@ export function ChatPanel({ open, onClose }: ChatPanelProps) {
 
   const [input, setInput] = React.useState('');
   const [isSending, setIsSending] = React.useState(false);
+  const [error, setError] = React.useState<string | null>(null);
 
   const messagesEndRef = React.useRef<HTMLDivElement | null>(null);
 
@@ -50,22 +52,31 @@ export function ChatPanel({ open, onClose }: ChatPanelProps) {
     ]);
   };
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (!input.trim() || isSending) return;
 
     const content = input.trim();
     setInput('');
     addMessage('user', content);
+    setError(null);
 
-    // Mock sending state + placeholder bot reply
     setIsSending(true);
-    setTimeout(() => {
+    try {
+      const response = await sendChatMessage(content);
+      addMessage('bot', response);
+    } catch (err) {
+      const errorMessage =
+        err instanceof Error
+          ? err.message
+          : 'Failed to send message. Please try again.';
+      setError(errorMessage);
       addMessage(
         'bot',
-        "This is a preview of how your portfolio chatbot will respond.\n\nLater, you'll connect this UI to a real backend or AI agent so it can answer questions about your work, stack, and experience.",
+        `Sorry, I encountered an error: ${errorMessage}\n\nPlease make sure the chat service is running and try again.`,
       );
+    } finally {
       setIsSending(false);
-    }, 900);
+    }
   };
 
   const handleKeyDown: React.KeyboardEventHandler<HTMLTextAreaElement> = (
@@ -171,10 +182,11 @@ export function ChatPanel({ open, onClose }: ChatPanelProps) {
                   <Send className="h-4 w-4" />
                 </Button>
               </div>
-              <p className="mt-1.5 text-[10px] leading-snug text-muted-foreground">
-                This is a design-only preview. Responses are static until you
-                connect your backend or AI agent.
-              </p>
+              {error && (
+                <p className="mt-1.5 text-[10px] leading-snug text-destructive">
+                  {error}
+                </p>
+              )}
             </footer>
           </div>
         </motion.aside>
