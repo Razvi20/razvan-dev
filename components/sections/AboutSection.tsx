@@ -1,7 +1,8 @@
 'use client';
 
-import { MapPin, Code2 } from 'lucide-react';
+import { MapPin, Code2, Download } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { Container } from '@/components/atoms';
 import { StatCard } from '@/components/molecules';
@@ -107,6 +108,15 @@ export function AboutSection() {
                   {skill}
                 </Badge>
               ))}
+            </div>
+
+            <div className="mb-8">
+              <Button size="lg" variant="link" className="gap-2 p-0!" asChild>
+                <a href="/api/resume" target="_blank" rel="noopener noreferrer">
+                  <Download className="w-4 h-4" />
+                  Download Resume
+                </a>
+              </Button>
             </div>
 
             {/* Stats */}
